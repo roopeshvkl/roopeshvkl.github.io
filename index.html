@@ -1,7 +1,316 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roopesh Vinodh Kumar Lal - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for social media icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'main-bg': '#110E15',
+                        'card-bg': '#211720',
+                        'border-color': '#2A0A11',
+                        'accent-primary': '#411D2B',
+                        'accent-secondary': '#430E18',
+                        'light-text': '#E0E0E0',
+                        'medium-text': '#B0B0B0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #110E15; /* main-bg */
+            color: #E0E0E0; /* light-text */
+        }
+        /* Style for the active navigation link */
+        .nav-link-active {
+            color: #E0E0E0; /* light-text */
+            font-weight: 600;
+            position: relative;
+        }
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            bottom: -4px;
+            left: 25%;
+            background-color: #411D2B; /* accent-primary */
+        }
+        /* Animation for sections fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-main-bg/80 backdrop-blur-md shadow-lg shadow-black/30 fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border-color">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-light-text">Roopesh V. K. Lal</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-medium-text hover:text-light-text transition-colors relative">Home</a>
+                <a href="#about" class="nav-link text-medium-text hover:text-light-text transition-colors relative">About</a>
+                <a href="#education" class="nav-link text-medium-text hover:text-light-text transition-colors relative">Education</a>
+                <a href="#experience" class="nav-link text-medium-text hover:text-light-text transition-colors relative">Experience</a>
+                <a href="#projects" class="nav-link text-medium-text hover:text-light-text transition-colors relative">Projects</a>
+                <a href="#contact" class="nav-link text-medium-text hover:text-light-text transition-colors relative">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-light-text focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg">
+            <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">About</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">Education</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-white hover:bg-accent-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center bg-main-bg">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-light-text leading-tight">Roopesh Vinodh Kumar Lal</h1>
+                <p class="mt-4 text-xl md:text-2xl text-accent-primary font-medium">Robotics Engineer | Software Developer</p>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-medium-text">
+                    Welcome to my portfolio. I'm passionate about building intelligent systems that solve real-world problems. Explore my work and get in touch!
+                </p>
+                <a href="#projects" class="mt-8 inline-block bg-accent-primary text-light-text font-semibold px-8 py-3 rounded-lg shadow-lg shadow-accent-primary/20 hover:bg-accent-secondary transition-all transform hover:scale-105">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light-text">About Me</h2>
+                <div class="mt-12 max-w-4xl mx-auto text-lg text-medium-text leading-relaxed text-center bg-card-bg p-8 md:p-12 rounded-xl shadow-lg shadow-black/30 border border-border-color">
+                    <p>
+                        I am a Master's student in Engineering Science with a focus on Robotics at the University at Buffalo. With a strong foundation in software engineering and a passion for autonomous systems, I enjoy tackling complex challenges and developing innovative solutions. My experience spans from developing scalable Java applications to building advanced robotics simulations. I am proficient in a variety of programming languages and technologies, and I am always eager to learn and grow in the ever-evolving field of technology.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 md:py-32 bg-main-bg fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light-text">Education</h2>
+                <div class="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Degree 1 -->
+                    <div class="bg-card-bg p-8 rounded-xl shadow-lg shadow-black/30 hover:border-accent-primary transition-all border border-border-color">
+                        <h3 class="text-xl font-semibold text-accent-primary">Master of Science in Engineering Science - Robotics</h3>
+                        <p class="mt-2 text-light-text">University at Buffalo, The State University of New York</p>
+                        <p class="mt-1 text-medium-text">August 2023 - May 2025</p>
+                    </div>
+                    <!-- Degree 2 -->
+                    <div class="bg-card-bg p-8 rounded-xl shadow-lg shadow-black/30 hover:border-accent-primary transition-all border border-border-color">
+                        <h3 class="text-xl font-semibold text-accent-primary">Bachelor of Engineering in Electronics and Communication Engineering</h3>
+                        <p class="mt-2 text-light-text">Anna University, India</p>
+                        <p class="mt-1 text-medium-text">August 2015 - May 2019</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light-text">Experience</h2>
+                <div class="mt-12 max-w-4xl mx-auto relative border-l-2 border-border-color pl-8 space-y-12">
+                     <!-- Job 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 top-1 w-4 h-4 bg-accent-primary rounded-full border-4 border-main-bg"></div>
+                        <p class="text-sm font-medium text-medium-text">August 2024 - Present</p>
+                        <h3 class="mt-1 text-xl font-semibold text-light-text">Graduate Research Assistant</h3>
+                        <p class="text-md text-medium-text">SUNY University at Buffalo, NY</p>
+                        <p class="mt-2 text-medium-text leading-relaxed">Engaged in research on an autonomous excavator project, implementing software stack components using C++ and Python with ROS2. Built a Unity3D simulator with an Algoryx physics plugin for realistic dynamics modeling and algorithm testing.</p>
+                    </div>
+                     <!-- Job 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 top-1 w-4 h-4 bg-accent-primary rounded-full border-4 border-main-bg"></div>
+                        <p class="text-sm font-medium text-medium-text">January 2025 - May 2025</p>
+                        <h3 class="mt-1 text-xl font-semibold text-light-text">Graduate Teaching Assistant</h3>
+                        <p class="text-md text-medium-text">SUNY University at Buffalo, NY</p>
+                        <p class="mt-2 text-medium-text leading-relaxed">Co-instructed a graduate-level robotics course, providing technical guidance on path planning algorithms, control systems, and ROS implementation. Mentored students in debugging robotics code and graded assignments on RRT/RRT* path planning and PID controllers.</p>
+                    </div>
+                     <!-- Job 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 top-1 w-4 h-4 bg-accent-primary rounded-full border-4 border-main-bg"></div>
+                        <p class="text-sm font-medium text-medium-text">August 2019 - August 2023</p>
+                        <h3 class="mt-1 text-xl font-semibold text-light-text">Member Technical Staff</h3>
+                        <p class="text-md text-medium-text">Zoho Corporation</p>
+                        <p class="mt-2 text-medium-text leading-relaxed">Engineered scalable Core Java applications with advanced multi-threading, improving performance by 30%. Optimized database structures and queries, reducing data retrieval time by 50%. Developed comprehensive web solutions using J2EE technologies and REST APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32 bg-main-bg fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light-text">Projects</h2>
+                <div class="mt-12 grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Project 1 -->
+                    <div class="bg-card-bg p-8 rounded-xl shadow-lg shadow-black/30 hover:border-accent-primary transition-all flex flex-col border border-border-color">
+                        <h3 class="text-xl font-semibold text-accent-primary">TERA: Simulation Environment for Terrain Excavation Robot Autonomy</h3>
+                        <p class="mt-4 text-medium-text leading-relaxed flex-grow">Designed and built a physics-based simulator for autonomous excavators using Unity3D and Algoryx with ROS2 bindings. The simulator supports customizable excavator configurations and multiple terrain types, and has been validated to match real-world excavator dynamics with less than 3% deviation.</p>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-card-bg p-8 rounded-xl shadow-lg shadow-black/30 hover:border-accent-primary transition-all flex flex-col border border-border-color">
+                        <h3 class="text-xl font-semibold text-accent-primary">Robot Navigation in Dynamic Environments</h3>
+                        <p class="mt-4 text-medium-text leading-relaxed flex-grow">Spearheaded the design of a 2D navigation environment with dynamic obstacles to simulate crowd-like interactions. Implemented and tuned DQN with Prioritized Experience Replay and Advantage Actor-Critic in PyTorch, achieving a 51% success rate in highly stochastic scenarios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-light-text">Contact Me</h2>
+                <p class="mt-4 text-lg text-center text-medium-text">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="mt-12 max-w-lg mx-auto bg-card-bg p-8 rounded-xl shadow-lg shadow-black/30 border border-border-color">
+                    <form action="#" method="POST">
+                        <div class="mb-4">
+                            <label for="name" class="block text-medium-text font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-main-bg border border-border-color text-light-text rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-medium-text font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-main-bg border border-border-color text-light-text rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-medium-text font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-main-bg border border-border-color text-light-text rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-primary" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full bg-accent-primary text-light-text font-semibold px-6 py-3 rounded-lg shadow-lg shadow-accent-primary/20 hover:bg-accent-secondary transition-colors">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-card-bg text-medium-text py-12 border-t border-border-color">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/Roopesh0831" target="_blank" rel="noopener noreferrer" class="hover:text-light-text transition-colors">
+                    <i data-feather="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/roopeshvkumar/" target="_blank" rel="noopener noreferrer" class="hover:text-light-text transition-colors">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="mailto:roopesh0831@gmail.com" class="hover:text-light-text transition-colors">
+                    <i data-feather="mail"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Roopesh Vinodh Kumar Lal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Feather Icons Initialization ---
+        feather.replace();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Close mobile menu when a link is clicked ---
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Active Navigation Link on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4 // Adjust this value to change when the link becomes active
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-link-active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('nav-link-active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // --- Fade-in Animation on Scroll ---
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeInSections.forEach(section => {
+            fadeInObserver.observe(section);
+        });
+
+    </script>
 </body>
 </html>
+
